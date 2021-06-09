@@ -1,0 +1,44 @@
+<local:BaseScreenView x:Class="Mutual.Views.AboutView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Mutual.Views"
+        mc:Ignorable="d"
+        Width="700"
+        Height="125"
+        Title="О программе">
+	<Grid>
+		<StackPanel Grid.Row="0">
+			<Grid>
+				<Ellipse Name="Ellipse3" Fill="#B2DEFF" Width="55" Height="55" />
+				<Ellipse Name="Ellipse2" Fill="#96D1FF" Width="53" Height="53" />
+				<Ellipse Name="Ellipse1" Fill="#709DBF" Width="50" Height="50" />
+			</Grid>
+		</StackPanel>
+		<Grid Margin="5,5,5,5" Grid.Row="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid Grid.Row="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<Label Grid.Row="0" Grid.Column="0">Программа</Label>
+				<Label Grid.Row="1" Grid.Column="0">Версия</Label>
+				<Label Grid.Row="2" Grid.Column="0">Автор</Label>
+				<Label Grid.Row="0" Grid.Column="1" Content="{Binding ProgramName, Mode=OneWay}" Style="{StaticResource HeaderLabel}"/>
+				<Label Grid.Row="1" Grid.Column="1" Content="{Binding ProgramVersion, Mode=OneWay}" Style="{StaticResource HeaderLabel}" />
+				<Label Grid.Row="2" Grid.Column="1" Content="{Binding Author, Mode=OneWay}" Style="{StaticResource HeaderLabel}"/>
+			</Grid>
+			<Button Name="Ok" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom">Ok</Button>
+		</Grid>
+	</Grid>
+</local:BaseScreenView>

@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+        <PropertyGroup>
+                <OutputType>WinExe</OutputType>
+                <UseWPF>true</UseWPF>
+                <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+                <Deterministic>false</Deterministic>
+                <Company>HSi</Company>
+                <AssemblyOriginatorKeyFile>HSi.snk</AssemblyOriginatorKeyFile>
+                <SignAssembly>true</SignAssembly>
+                <PublicSign>true</PublicSign>
+                <AssemblyVersion>2.0.1</AssemblyVersion>
+                <FileVersion>2.0.1</FileVersion>
+                <Nullable>disable</Nullable>
+                <TargetFramework>net5.0-windows</TargetFramework>
+                <PackageVersion>2.0.1</PackageVersion>
+        </PropertyGroup>
+        <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+          <PlatformTarget>AnyCPU</PlatformTarget>
+          <Prefer32bit>true</Prefer32bit>
+        </PropertyGroup>
+        <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+          <PlatformTarget>AnyCPU</PlatformTarget>
+          <DebugType>none</DebugType>
+          <Prefer32bit>true</Prefer32bit>
+        </PropertyGroup>
+
+        <ItemGroup>
+          <PackageReference Include="Caliburn.Micro" Version="4.0.105-alpha" />
+          <PackageReference Include="Dapper" Version="2.0.78" />
+          <PackageReference Include="EPPlus" Version="4.5.3.3" />
+          <PackageReference Include="Fastenshtein" Version="1.0.0.7" />
+          <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.4" />
+          <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+          <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+          <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
+          <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0" />
+          <PackageReference Include="MySql.Data" Version="8.0.23" />
+          <PackageReference Include="NHibernate" Version="5.3.6" />
+          <PackageReference Include="NHibernate.Driver.OracleManagedDataAccessCore" Version="1.0.1" />
+          <PackageReference Include="NHibernate.Extensions.Sqlite" Version="5.0.4" />
+          <PackageReference Include="ReactiveUI" Version="13.2.2" />
+          <PackageReference Include="System.Data.SQLite" Version="1.0.113.7" />
+          <PackageReference Include="System.Reactive" Version="5.0.0" />
+          <PackageReference Include="System.Reactive.Core" Version="5.0.0" />
+          <PackageReference Include="System.Reactive.Linq" Version="5.0.0" />
+          <PackageReference Include="WpfAnimatedGif" Version="2.0.0" />
+        </ItemGroup>
+
+        <ItemGroup>
+          <Folder Include="Properties" />
+        </ItemGroup>
+
+        <ItemGroup>
+          <None Update="Mutual.config">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          </None>
+        </ItemGroup>
+
+        <ItemGroup>
+          <Page Update="Views\SettingView.xaml">
+            <Generator></Generator>
+          </Page>
+          <Page Update="Views\AboutView.xaml">
+            <Generator></Generator>
+          </Page>
+        </ItemGroup>
+
+        <ItemGroup>
+          <Compile Update="Views\SettingView.xaml.cs">
+            <DependentUpon>SettingView.xaml</DependentUpon>
+          </Compile>
+          <Compile Update="Views\AboutView.xaml.cs">
+            <DependentUpon>AboutView.xaml</DependentUpon>
+          </Compile>
+        </ItemGroup>
+
+        <ItemGroup>
+          <None Remove="Asserts\addFolder.png" />
+          <None Remove="Asserts\MysqlDb.png" />
+          <None Remove="Asserts\sqliteDb.png" />
+          <None Remove="Views\MysqlDb.png" />
+          <Resource Include="Asserts\addFolder.png" />
+          <None Remove="Asserts\clearAll.png" />
+          <Resource Include="Asserts\clearAll.png" />
+          <None Remove="Asserts\exit.png" />
+          <Resource Include="Asserts\exit.png" />
+          <None Remove="Asserts\eye.png" />
+          <Resource Include="Asserts\eye.png" />
+          <None Remove="Asserts\OracleDb.png" />
+          <Resource Include="Asserts\MysqlDb.png" />
+          <Resource Include="Asserts\OracleDb.png" />
+          <None Remove="Asserts\removeFolder.png" />
+          <Resource Include="Asserts\removeFolder.png" />
+          <None Remove="Asserts\refresh.gif" />
+          <Resource Include="Asserts\refresh.gif" />
+          <None Remove="Asserts\refresh-40.png" />
+          <Resource Include="Asserts\refresh-40.png" />
+          <None Remove="Asserts\show-password.png" />
+          <Resource Include="Asserts\show-password.png" />
+          <None Remove="Asserts\loading.gif" />
+          <Resource Include="Asserts\loading.gif" />
+          <Resource Include="Asserts\sqliteDb.png" />
+        </ItemGroup>
+
+</Project>
